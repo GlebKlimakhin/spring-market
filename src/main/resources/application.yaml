@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    locations: classpath:db/migration
+    enabled: true
+    validate-on-migrate: true
+    baseline-on-migrate: true
+
+server:
+  port: 8189
+  servlet:
+    context-path: /api/v1
+
+jwt:
+  secret: eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTYzMzgyNTA1NCwiaWF0IjoxNjMzODI1MDU0fQ.QMZSvfg10eYIF5rbPbezNCtgOn814AaYQUFpHPFrz1Q
